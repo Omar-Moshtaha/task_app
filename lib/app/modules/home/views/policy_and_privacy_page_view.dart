@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:project_architecture/app/modules/home/controllers/policy_and_privacy_page_controllers.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_bottom_sheet.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_divider.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_image.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_text.dart';
-class AddCategorydetailsPageSucceeded extends StatelessWidget {
-  const AddCategorydetailsPageSucceeded({Key? key}) : super(key: key);
+class PolicyAndPrivacyPage extends GetView<policyAndPrivacyPageControllers> {
+  const PolicyAndPrivacyPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    controller.addToListCategories(Get.arguments).then((value){
+    });
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -40,6 +44,7 @@ class AddCategorydetailsPageSucceeded extends StatelessWidget {
       ),
       bottomNavigationBar: PrimaryBottomSheet(
           Get.width, 80.h, 25.r, "التالي", 0xFFD84E67, 0xFFFFFFFF, 0x0a000000,function: (){
+            Get.offAllNamed('home',);
       },),
     );
   }

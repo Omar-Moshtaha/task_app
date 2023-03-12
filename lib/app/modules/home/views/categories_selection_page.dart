@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:project_architecture/app/modules/home/controllers/categories_selection_controller.dart';
+import 'package:project_architecture/app/modules/home/controllers/categories_selection_controller.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_bottom_sheet.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_divider.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_image.dart';
@@ -49,7 +50,7 @@ class CategoriesSelectionPage extends GetView<CategoriesSelectionController> {
                           border: Border.all(color: const Color(0xFFEEF1F5))
                       ),
                       child:   DropdownButton(hint: const Text("ستاندرد"),icon: const Icon(Icons.arrow_drop_down_circle_outlined),underline: const SizedBox(),elevation: 0,value:controller.categorySelected ,items: controller.categories.map((e){
-                        return DropdownMenuItem(value: e,child: Text(e),);
+                        return DropdownMenuItem(alignment: Alignment.centerRight,value: e,child: Text(e),);
                       }).toList(), onChanged: (value){
                         controller.changeValueOfCategorySelected(value);
                       }),

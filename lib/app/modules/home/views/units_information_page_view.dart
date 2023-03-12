@@ -99,7 +99,7 @@ class UnitsInformationPage extends GetView<UnitsInformationController> {
                           },index);
                         }),
                     separatorBuilder: (context, index) => SizedBox(
-                          height: 2.h,
+                          height: 1.h,
                         ),
                     itemCount: list.length)
               ],
@@ -116,17 +116,10 @@ class UnitsInformationPage extends GetView<UnitsInformationController> {
         0xFFFFFFFF,
         0x0a000000,
         function: () {
-for(int i=0;i<list.length;i++){
-  unitInformationDetails.add({
-    "Category":list[i],
-    "NumberUnit":"${list[i]['number']}",
-    "UnitName":controller.unitListModel[i].text_1,
-    "UnitTextForm":controller.unitListModel[i].textForm?.text,
+          controller.addToUnitInformationDetails();
 
-  });
+          print(unitInformationDetails);
 
-}
-print(unitInformationDetails);
 
         },
       ),

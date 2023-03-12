@@ -24,10 +24,9 @@ class PrimaryContaineUnitInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(this.index);
     return               Padding(
       padding:  EdgeInsets.only(top: 20.h),
-      child: Container(width: widthOfContainer,height:value==true? heightOfContainer!/3.3:60.h,decoration: BoxDecoration(
+      child: Container(width: widthOfContainer,height:value==true?  heightOfContainer!/2.9:60.h,decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.r),
         color:  Color(valueOfContainerColor!) ,
         boxShadow:   [
@@ -78,21 +77,24 @@ class PrimaryContaineUnitInformation extends StatelessWidget {
             value==true?   PrimaryText("أرقام الوحدات",fontSize: 12.sp,fontWeight: FontWeight.w700,color: const Color(0xFF335C87),):Container(),
             SizedBox(height: 5.h,),
 
-            value==true?             Wrap(direction: Axis.horizontal,children: List.generate(
-                unitListModel!.where((element) =>element.index==index).toList().length, (index) =>  Row(
+            value==true?             Wrap(children: List.generate(
 
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
+                unitListModel!.where((element) =>element.index==index).toList().length, (index) =>
+                Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                  child: Wrap(
+direction: Axis.horizontal,
+
               children: [
 Container(width: 70.w,height: 70.h,child: PrimaryTextField(hintText: "0", controller:unitListModel![index].textForm , validator: (validator){})),
-                SizedBox(width: 10.w,),
-
-                Padding(padding: EdgeInsets.only(top: 8.h),child: PrimaryText("${unitListModel![index].text_1}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF335C87),)),
+SizedBox(width: 20.w,),
+                  Padding(padding: EdgeInsets.only(top: 8.h),child: PrimaryText("${unitListModel![index].text_1}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF335C87),)),
 
 
 
               ],
-            ) ),):Container(),
+            ),
+                ) ),):Container(),
           ],
         ),
       )

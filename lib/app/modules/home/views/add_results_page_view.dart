@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:project_architecture/app/data/home_model.dart';
 import 'package:project_architecture/app/modules/home/controllers/result_controller.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_container_of%D9%80result.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_text.dart';
@@ -11,6 +12,8 @@ class ResultPageView extends GetView<ResultController> {
 
   @override
   Widget build(BuildContext context) {
+    List <HomeModel>list=Get.arguments;
+print(list[0].direction);
     return Scaffold(
 appBar:
         AppBar(
@@ -37,8 +40,8 @@ appBar:
           physics: const BouncingScrollPhysics(),
           child: Column(
               children: [
-                ListView.separated(shrinkWrap: true,itemBuilder: (context,index)=>PrimaryContainerOfResult("ديلوكس",controller.modelItem,valueOfColorTextAndIcon: 0xFF335C87,valueOfColorContainer: 0XFFFFFFFF,valueOfColorShadowOfContainer: 0x14000000,heightOfContainer: Get.height/2.6,widthOfContainer: Get.width,)
-                    , separatorBuilder: (context,index)=>const SizedBox(), itemCount: 3),
+                ListView.separated(physics: BouncingScrollPhysics(),shrinkWrap: true,itemBuilder: (context,index)=>PrimaryContainerOfResult(list[index].layer,controller.modelItem,index,valueOfColorTextAndIcon: 0xFF335C87,valueOfColorContainer: 0XFFFFFFFF,valueOfColorShadowOfContainer: 0x14000000,heightOfContainer: Get.height/2.6,widthOfContainer: Get.width,homeModel: list,)
+                    , separatorBuilder: (context,index)=>const SizedBox(), itemCount: list.length),
 
               ]
 

@@ -3,14 +3,16 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const HOME = _Paths.HOME;
+  static const categoriesSelectionPage = _Paths.categoriesSelectionPage;
 }
 
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
-  static const addCategorydCtailsPageSucceeded = '/addCategorydetailsPageSucceeded';
+  static const PolicyAndPrivacyPage = '/PolicyAndPrivacyPage';
   static const categoriesSelectionPage='/CategoriesSelectionPage';
   static const resultPageView = '/ResultPageView';
   static const unitsInformationPage='/UnitsInformationPage';
+  static const CategoryAddPageSuccessfully='/CategoryAddPageSuccessfully';
+static const SearchResultPage='/SearchResultPage';
 }
