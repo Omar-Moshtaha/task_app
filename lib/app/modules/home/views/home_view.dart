@@ -29,7 +29,7 @@ class HomeView extends GetView<HomeController> {
 
       AppBar(
         actions: [
-          Center(child: PrimaryText("(تصنيف ${controller.countOfList.value+1} من ${myList!.length}) ${myList![controller.countOfList.value]['Category']}",color: const Color(0XFF335C87),fontSize: 16.sp,)),
+          Center(child: PrimaryText("(تصنيف 2 من ${myList!.length}) ${myList![1]['Category']}",color: const Color(0XFF335C87),fontSize: 16.sp,)),
 
           Padding(
             padding:  EdgeInsets.only(right:10.w,left: 10.w),
@@ -846,7 +846,7 @@ controller.addToListweekend(index);
             function: () {
               controller.changeValueOfStepper(1);
 if(controller.days.isNotEmpty||controller.weekend.isNotEmpty){
-  controller.homeModel.add(HomeModel(layer: myList![controller.countOfList.value]['Category'],location:marker?[0].country,unitArea: controller.textForm1.text, direction:controller.myValue,youngPeopleOrFamilies:controller.item[controller.index],numberOfCouncilsSessions:controller.count.value,numberOfSeatsAccommodates:controller.numberOfSeats.text,privateOrShared:controller.myChoose ,internalOrExternal: controller.myTwoChoose,kitchenaVailable: controller.myThreeChoose,privateOrShared2:controller.myFourChoose, numberOfBedRooms:controller.numberOfRooms,listOfBedRooms:[controller.dataOfRoom],diningTableSleeps: controller.dinningTable.text, weekdays:controller.days, daysOfTheWeek:controller.weekend));
+  controller.homeModel.add(HomeModel(layer: myList![0]['Category'],location:marker?[0].country,unitArea: controller.textForm1.text, direction:controller.myValue,youngPeopleOrFamilies:controller.item[controller.index],numberOfCouncilsSessions:controller.count.value,numberOfSeatsAccommodates:controller.numberOfSeats.text,privateOrShared:controller.myChoose ,internalOrExternal: controller.myTwoChoose,kitchenaVailable: controller.myThreeChoose,privateOrShared2:controller.myFourChoose, numberOfBedRooms:controller.numberOfRooms,listOfBedRooms:[controller.dataOfRoom],diningTableSleeps: controller.dinningTable.text, weekdays:controller.days, daysOfTheWeek:controller.weekend));
   controller.changeValueOfcountOfList();
   Get.offAllNamed('CategoryAddPageSuccessfully',arguments: controller.homeModel);
 

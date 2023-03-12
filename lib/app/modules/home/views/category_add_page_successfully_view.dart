@@ -29,7 +29,7 @@ print("The length is${listItem.length}");
               SizedBox(height: 10.h,),
 
               PrimaryText(
-                "تم إضافة تفاصيل (تصنيف 1 من 2) ستاندرد ",
+                "تم إضافة تفاصيل (تصنيف 1 من 1) ستاندرد ",
                 textAlign: TextAlign.right,
                 fontSize: 18.sp,
                 color: const Color(0xFF335C87),
