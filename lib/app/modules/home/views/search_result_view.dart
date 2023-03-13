@@ -18,23 +18,27 @@ class SearchResultPage extends GetView<SearchResultController> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Container(
-                width: Get.width,
-                height: Get.height / 1.3 / 0.97,
-                color: Colors.white,
-                child: GoogleMap(
-                  mapType: MapType.normal,
-                  zoomControlsEnabled: false,
-                  onTap: (latLng) {
-                    controller.getGeocodingOfLatLng(
-                        latLng.latitude, latLng.longitude);
-                  },
-                  initialCameraPosition: controller.googlePlex,
-                  markers: controller.marker,
-                  onMapCreated: (GoogleMapController controllers) {
-                    controller.googleMapController.complete(controllers);
-                  },
-                ),
+              GetBuilder<SearchResultController>(
+                builder: (context){
+                  return Container(
+                    width: Get.width,
+                    height: Get.height / 1.3 / 0.97,
+                    color: Colors.white,
+                    child: GoogleMap(
+                      mapType: MapType.normal,
+                      zoomControlsEnabled: false,
+                      onTap: (latLng) {
+                        controller.getGeocodingOfLatLng(
+                            latLng.latitude, latLng.longitude);
+                      },
+                      initialCameraPosition: controller.googlePlex,
+                      markers: controller.marker,
+                      onMapCreated: (GoogleMapController controllers) {
+                        controller.googleMapController.complete(controllers);
+                      },
+                    ),
+                  );
+                },
               ),
               Padding(
                 padding: EdgeInsets.only(right: 20.w, top: 40.h),
@@ -88,18 +92,26 @@ class SearchResultPage extends GetView<SearchResultController> {
           );
         },
       ),
-      bottomNavigationBar: PrimaryBottomSheet(
-        Get.width,
-        80.h,
-        25.r,
-        "حفظ",
-        0xFFD84E67,
-        0xFFFFFFFF,
-        0x0a000000,
-        function: () {
-          Get.toNamed(
-            "/home",
-            arguments: controller.myMarker,
+      bottomNavigationBar: GetBuilder<SearchResultController>(
+        builder: (context){
+          return PrimaryBottomSheet(
+            Get.width,
+            80.h,
+            25.r,
+            "حفظ",
+            0xFFD84E67,
+            0xFFFFFFFF,
+            0x0a000000,
+            function: () {
+              Get.toNamed(
+                "/home",
+                arguments: controller.myMarker,
+              );
+              Future.delayed(const Duration(milliseconds: 500)).then((value) {
+                controller.deleteMarker();
+
+              });
+            },
           );
         },
       ),

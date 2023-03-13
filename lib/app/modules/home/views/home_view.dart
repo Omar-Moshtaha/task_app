@@ -1510,7 +1510,9 @@ class HomeView extends GetView<HomeController> {
                                     PrimaryTextField(
                                         hintText: "/ليلة",
                                         controller: controller.pricePerNight,
-                                        validator: (validator) {}),
+                                        validator: (validator) {
+                                          return null;
+                                        }),
                                     const Divider(
                                       color: Color(0xfffc7c7c7),
                                     ),

@@ -59,13 +59,21 @@ street=placemarks[0].street;
 if(marker.length==0){
   marker.add(Marker(markerId: MarkerId("1"),position: LatLng(Lat,Long),icon:markerIcon ),);
 myMarker.add(MyMarker(marker,country,street));
+  update();
+
 }else{
 Marker myMark= marker.firstWhere((marker) => marker.markerId.value == "1",orElse: () => null!);
 
   marker.remove(myMark);
+update();
+
 }
 
 
 update();
+}
+void deleteMarker(){
+  marker={};
+  update();
 }
 }
