@@ -12,7 +12,7 @@ class ResultPageView extends GetView<ResultController> {
 
   @override
   Widget build(BuildContext context) {
-    List <HomeModel>list=Get.arguments;
+    List <HomeModel> list=Get.arguments;
 print(list[0].direction);
     return Scaffold(
 appBar:
@@ -40,7 +40,7 @@ appBar:
           physics: const BouncingScrollPhysics(),
           child: Column(
               children: [
-                ListView.separated(physics: BouncingScrollPhysics(),shrinkWrap: true,itemBuilder: (context,index)=>PrimaryContainerOfResult(list[index].layer,controller.modelItem,index,valueOfColorTextAndIcon: 0xFF335C87,valueOfColorContainer: 0XFFFFFFFF,valueOfColorShadowOfContainer: 0x14000000,heightOfContainer: Get.height/2.6,widthOfContainer: Get.width,homeModel: list,)
+                ListView.separated(physics: const BouncingScrollPhysics(),shrinkWrap: true,itemBuilder: (context,index)=>PrimaryContainerOfResult(list[index].layer,controller.modelItem,index,valueOfColorTextAndIcon: 0xFF335C87,valueOfColorContainer: 0XFFFFFFFF,valueOfColorShadowOfContainer: 0x14000000,heightOfContainer: Get.height/2.6,widthOfContainer: Get.width,homeModel: list,)
                     , separatorBuilder: (context,index)=>const SizedBox(), itemCount: list.length),
 
               ]

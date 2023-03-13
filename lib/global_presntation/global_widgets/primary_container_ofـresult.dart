@@ -46,31 +46,33 @@ class PrimaryContainerOfResult extends StatelessWidget {
             PrimaryImage("assets/images/house.png",fit: BoxFit.cover,width: Get.width,),
             SizedBox(height: 10.h,),
 
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                PrimaryText("${homeModel![index!].direction}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),),
-                SizedBox(width: 10.w,),
-                const PrimaryImage("assets/images/signpost.png",fit: BoxFit.cover,),
-                const Spacer(),
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(width: 50.w,child: PrimaryText("${homeModel![index!].direction}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),)),
+                  SizedBox(width: 10.w,),
+                  const PrimaryImage("assets/images/signpost.png",fit: BoxFit.cover,),
+                  const Spacer(),
 
-                PrimaryText("${homeModel![index!].location}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),),
-                SizedBox(width: 10.w,),
+                  Container(width: 100.w,child: PrimaryText("${homeModel![index!].location}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),)),
+                  SizedBox(width: 10.w,),
 
-                const PrimaryImage("assets/images/location.png",fit: BoxFit.cover,),
+                  const PrimaryImage("assets/images/location.png",fit: BoxFit.cover,),
 
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 5.h,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PrimaryText("${homeModel![index!].unitArea}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),),
+                Container(width: 50.w,child: PrimaryText("${homeModel![index!].unitArea}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),)),
                 SizedBox(width: 10.w,),
                 const PrimaryImage("assets/images/ruler.png",fit: BoxFit.cover,),
                 const Spacer(),
 
-                PrimaryText("${homeModel![index!].layer}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),),
+                Container(width: 100.w,child: PrimaryText("${homeModel![index!].layer}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),)),
                 SizedBox(width: 10.w,),
 
                 const PrimaryImage("assets/images/layer.png",fit: BoxFit.cover,),
@@ -82,12 +84,13 @@ class PrimaryContainerOfResult extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PrimaryText("${homeModel![index!].numberOfCouncilsSessions}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),),
+
+                Container(width: 50.w,child: PrimaryText("${homeModel![index!].numberOfCouncilsSessions}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),)),
                 SizedBox(width: 10.w,),
                 const PrimaryImage("assets/images/house-2.png",fit: BoxFit.cover,),
                 const Spacer(),
 
-                PrimaryText("${homeModel![index!].youngPeopleOrFamilies}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),),
+                Container(width: 100.w,child: PrimaryText("${homeModel![index!].youngPeopleOrFamilies}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),)),
                 SizedBox(width: 10.w,),
                 const PrimaryImage("assets/images/Group.png",fit: BoxFit.cover,),
 
@@ -98,12 +101,12 @@ class PrimaryContainerOfResult extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                PrimaryText("${homeModel![index!].numberOfBedRooms}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),),
+                Container(width: 50.w,child: PrimaryText("${homeModel![index!].numberOfBedRooms}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),)),
                 SizedBox(width: 10.w,),
                 const PrimaryImage("assets/images/Bed.png",fit: BoxFit.cover,),
                 const Spacer(),
 
-                Container(child: PrimaryText("${homeModel![index!].numberOfCouncilsSessions}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),)),
+                Container(width: 100.w,child: PrimaryText("${homeModel![index!].numberOfCouncilsSessions}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0xFF707070),)),
                 SizedBox(width: 10.w,),
 
                 const PrimaryImage("assets/images/chair.png",fit: BoxFit.cover,),
@@ -114,7 +117,7 @@ class PrimaryContainerOfResult extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                PrimaryText("${homeModel![index!].diningTableSleeps}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),),
+                Container(width: 100.w,child: PrimaryText("${homeModel![index!].diningTableSleeps}",fontSize: 12.sp,fontWeight: FontWeight.w400,color: const Color(0XFF707070),)),
                 SizedBox(width: 10.w,),
 
                 Image.asset("assets/images/kitchen.png"),

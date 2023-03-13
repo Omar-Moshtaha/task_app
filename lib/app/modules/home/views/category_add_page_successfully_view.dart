@@ -11,9 +11,9 @@ class CategoryAddPageSuccessfully extends GetView<CategoryAddPageSuccessfullyCon
 
   @override
   Widget build(BuildContext context) {
-    List<HomeModel> listItem=Get.arguments;
+    List<HomeModel> listItem = Get.arguments;
 
-print("The length is${listItem.length}");
+    print("The length is${listItem.length}");
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -29,7 +29,7 @@ print("The length is${listItem.length}");
               SizedBox(height: 10.h,),
 
               PrimaryText(
-                "تم إضافة تفاصيل (تصنيف 1 من 1) ستاندرد ",
+                "تم إضافة تفاصيل (تصنيف 1 من 1) ${listItem[0].layer} ",
                 textAlign: TextAlign.right,
                 fontSize: 18.sp,
                 color: const Color(0xFF335C87),

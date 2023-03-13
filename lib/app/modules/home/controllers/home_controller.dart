@@ -6,10 +6,10 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:project_architecture/app/data/home_model.dart';
 import 'package:project_architecture/app/data/stepper_model.dart';
 
+int countOfList = 0;
 
 class HomeController extends GetxController {
   RxInt count = 0.obs;
-  RxInt countOfList = 0.obs;
 List informationOfCategory=[];
   bool value=false;
   List<HomeModel>homeModel=[];
@@ -69,7 +69,7 @@ void changeValueOfDrowdwonButtom(value){
 
   @override
   void onReady() {
-    changeValueOfcountOfList();
+    // changeValueOfcountOfList();
     super.onReady();
   }
 
@@ -186,8 +186,8 @@ update();
   }
   bool isBash=false;
   void changeValueOfcountOfList(){
-    countOfList.value++;
-    print("${countOfList.value}");
+    countOfList++;
+    print("The countOfList is${countOfList}");
 update();
   }
 }

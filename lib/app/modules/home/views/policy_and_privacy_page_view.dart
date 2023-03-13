@@ -6,12 +6,13 @@ import 'package:project_architecture/global_presntation/global_widgets/primary_b
 import 'package:project_architecture/global_presntation/global_widgets/primary_divider.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_image.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_text.dart';
+
 class PolicyAndPrivacyPage extends GetView<policyAndPrivacyPageControllers> {
   const PolicyAndPrivacyPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    controller.addToListCategories(Get.arguments).then((value){
-    });
+    controller.addToListCategories(Get.arguments).then((value) {});
 
     return Scaffold(
       body: SafeArea(
@@ -43,9 +44,19 @@ class PolicyAndPrivacyPage extends GetView<policyAndPrivacyPageControllers> {
         ),
       ),
       bottomNavigationBar: PrimaryBottomSheet(
-          Get.width, 80.h, 25.r, "التالي", 0xFFD84E67, 0xFFFFFFFF, 0x0a000000,function: (){
-            Get.offAllNamed('home',);
-      },),
+        Get.width,
+        80.h,
+        25.r,
+        "التالي",
+        0xFFD84E67,
+        0xFFFFFFFF,
+        0x0a000000,
+        function: () {
+          Get.offAllNamed(
+            'home',
+          );
+        },
+      ),
     );
   }
 }
