@@ -4,8 +4,8 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:project_architecture/app/data/home_model.dart';
+import 'package:project_architecture/app/data/marker_model.dart';
 import 'package:project_architecture/app/modules/home/controllers/policy_and_privacy_page_controllers.dart';
-import 'package:project_architecture/app/modules/home/views/search_result_view.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_bottom_sheet.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_divider.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_image.dart';
@@ -407,7 +407,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myChoose ==
+                                                                    .privateOrShared_1 ==
                                                                 true
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -451,7 +451,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myChoose ==
+                                                                    .privateOrShared_1 ==
                                                                 false
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -509,7 +509,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myTwoChoose ==
+                                                                    .internalOrExternal ==
                                                                 true
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -553,7 +553,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myTwoChoose ==
+                                                                    .internalOrExternal ==
                                                                 false
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -1029,7 +1029,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myThreeChoose ==
+                                                                    .kitchenAvailable ==
                                                                 true
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -1073,7 +1073,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myThreeChoose ==
+                                                                    .kitchenAvailable ==
                                                                 false
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -1131,7 +1131,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myFourChoose ==
+                                                                    .privateOrShared_2 ==
                                                                 true
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -1175,7 +1175,7 @@ class HomeView extends GetView<HomeController> {
                                                         const Color(0xFFFFFFFF),
                                                     border: Border.all(
                                                         color: controller
-                                                                    .myFourChoose ==
+                                                                    .privateOrShared_2 ==
                                                                 false
                                                             ? const Color(
                                                                 0XffD84E67)
@@ -1702,10 +1702,10 @@ class HomeView extends GetView<HomeController> {
                     youngPeopleOrFamilies: controller.item[controller.index],
                     numberOfCouncilsSessions: controller.count.value,
                     numberOfSeatsAccommodates: controller.numberOfSeats.text,
-                    privateOrShared: controller.myChoose,
-                    internalOrExternal: controller.myTwoChoose,
-                    kitchenaVailable: controller.myThreeChoose,
-                    privateOrShared2: controller.myFourChoose,
+                    privateOrShared: controller.privateOrShared_1,
+                    internalOrExternal: controller.internalOrExternal,
+                    kitchenaVailable: controller.kitchenAvailable,
+                    privateOrShared2: controller.privateOrShared_2,
                     numberOfBedRooms: controller.numberOfRooms,
                     listOfBedRooms: [controller.dataOfRoom],
                     diningTableSleeps: controller.dinningTable.text,

@@ -119,10 +119,3 @@ class SearchResultPage extends GetView<SearchResultController> {
   }
 }
 
-class MyMarker {
-  Set<Marker> marker = {};
-  String? country;
-  String? street;
-
-  MyMarker(this.marker, this.country, this.street);
-}

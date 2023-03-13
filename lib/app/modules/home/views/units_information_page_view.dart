@@ -7,16 +7,14 @@ import 'package:project_architecture/global_presntation/global_widgets/primary_b
 import 'package:project_architecture/global_presntation/global_widgets/primary_container_unit_information.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_divider.dart';
 import 'package:project_architecture/global_presntation/global_widgets/primary_text.dart';
-
-List list = [];
-List unitInformationDetails = [];
-
+List list=[];
+List unitInformationDetails=[];
 class UnitsInformationPage extends GetView<UnitsInformationController> {
   UnitsInformationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    list = Get.arguments;
+    list= Get.arguments;
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -89,21 +87,16 @@ class UnitsInformationPage extends GetView<UnitsInformationController> {
                               Get.height,
                               list[index]['value'],
                               0xFFFFFFFF,
-                              0x14000000,
-                              () {
-                                controller.changeValue(
-                                    list[index]['value'], index);
-                              },
-                              controller.iconData,
-                              controller.unitListModel,
-                              list[index]['number'],
-                              () {
-                                controller.supplyOverTheCounter(index);
-                              },
-                              () {
-                                controller.diminishmentOfTheCounter(index);
-                              },
-                              index);
+                              0x14000000, () {
+                            controller.changeValue(list[index]['value'],index);
+                          }, controller.iconData, controller.unitListModel,
+                              list[index]['number'], () {
+                           controller.supplyOverTheCounter(index);
+
+                          }, (){
+                            controller.diminishmentOfTheCounter(index);
+
+                          },index);
                         }),
                     separatorBuilder: (context, index) => SizedBox(
                           height: 1.h,
@@ -126,6 +119,8 @@ class UnitsInformationPage extends GetView<UnitsInformationController> {
           controller.addToUnitInformationDetails();
 
           print(unitInformationDetails);
+
+
         },
       ),
     );

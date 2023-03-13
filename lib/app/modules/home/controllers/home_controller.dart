@@ -19,11 +19,11 @@ List informationOfCategory=[];
   }
   bool switchValue=false;
 
-  bool myChoose=false;
-  bool myTwoChoose=false;
+  bool privateOrShared_1=false;
+  bool internalOrExternal=false;
 bool isVisible=true;
-  bool myFourChoose=false;
-  bool myThreeChoose=false;
+  bool    privateOrShared_2=false;
+  bool  kitchenAvailable=false;
 var dinningTable=TextEditingController();
   String ?myValue;
 int index=0;
@@ -111,21 +111,21 @@ print("The value is$isVisible");
 
 }
   void changeValueOfMyChoose(){
-    myChoose=!myChoose;
+    privateOrShared_1=!privateOrShared_1;
 
     update();
   }
   List dataOfRoom=[];
   void changeValueOfMyTwoChoose(){
-    myTwoChoose=!myTwoChoose;
+    internalOrExternal=!internalOrExternal;
     update();
   }
   void changeValueOfMyThreeChoose(){
-    myThreeChoose=!myThreeChoose;
+    kitchenAvailable=!kitchenAvailable;
     update();
   }
   void changeValueOfMyFourChoose(){
-    myFourChoose=!myFourChoose;
+    privateOrShared_2=!privateOrShared_2;
     update();
   }
   void increaseTheNumber(){
